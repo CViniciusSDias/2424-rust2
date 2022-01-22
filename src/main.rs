@@ -13,6 +13,7 @@ fn main() {
 
     cores();
     conteudo_opcional();
+    vectors();
 }
 
 #[allow(dead_code)]
@@ -88,6 +89,16 @@ fn conteudo_opcional() {
     }
 }
 
+#[allow(unused_variables)]
 fn ler_arquivo(caminho_arquivo: String) -> Option<String> {
     Some(String::from("Algum conteudo"))
+}
+
+fn vectors() {
+    let mut notas: Vec<f32> = vec![10.0, 8.0, 6.5];
+
+    println!("{:?}", notas);
+
+    notas.push(6.8);
+    println!("{:?}", notas);
 }
