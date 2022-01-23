@@ -129,15 +129,26 @@ fn vectors() {
 }
 
 struct Conta {
-    titular: String,
+    titular: Titular,
     saldo: f64
 }
 
+struct Titular {
+    nome: String,
+    sobrenome: String
+}
+
 fn conta_corrente() {
+    let titular = Titular{nome: String::from("Vinicius"), sobrenome: String::from("Dias")};
     let conta: Conta = Conta{
-        titular: String::from("Vinicius Dias"),
+        titular,
         saldo: 100.0
     };
 
-    println!("Dados da conta: Titular = {}, Saldo = {}", conta.titular, conta.saldo);
+    println!(
+        "Dados da conta: Titular = {} {}, Saldo = {}",
+        conta.titular.nome,
+        conta.titular.sobrenome,
+        conta.saldo
+    );
 }
