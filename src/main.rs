@@ -133,6 +133,12 @@ struct Conta {
     saldo: f64
 }
 
+impl Conta {
+    fn sacar(&mut self, valor: f64) {
+        self.saldo -= valor;
+    }
+}
+
 struct Titular {
     nome: String,
     sobrenome: String
@@ -140,10 +146,12 @@ struct Titular {
 
 fn conta_corrente() {
     let titular = Titular{nome: String::from("Vinicius"), sobrenome: String::from("Dias")};
-    let conta: Conta = Conta{
+    let mut conta: Conta = Conta{
         titular,
         saldo: 100.0
     };
+
+    conta.sacar(50.0);
 
     println!(
         "Dados da conta: Titular = {} {}, Saldo = {}",
