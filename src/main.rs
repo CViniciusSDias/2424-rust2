@@ -14,6 +14,8 @@ fn main() {
     cores();
     conteudo_opcional();
     vectors();
+
+    conta_corrente();
 }
 
 #[allow(dead_code)]
@@ -124,4 +126,18 @@ fn vectors() {
         println!("Nota = {}", nota);
     }
     println!("{:?}", notas);
+}
+
+struct Conta {
+    titular: String,
+    saldo: f64
+}
+
+fn conta_corrente() {
+    let conta: Conta = Conta{
+        titular: String::from("Vinicius Dias"),
+        saldo: 100.0
+    };
+
+    println!("Dados da conta: Titular = {}, Saldo = {}", conta.titular, conta.saldo);
 }
